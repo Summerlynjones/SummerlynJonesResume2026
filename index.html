@@ -4,286 +4,360 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Summerlyn Jones | Resume</title>
-
   <style>
     body {
       margin: 0;
-      padding: 24px;
-      background: #ececec;
+      background: #efefef;
+      font-family: "Times New Roman", Times, serif;
       color: #111;
-      font-family: "Times New Roman", Georgia, serif;
     }
 
-    .entry {
-  margin-bottom: 32px;
-  font-size: 13px;
-}
-
-.entry p {
-  margin: 6px 0;
-}
-
-    .resume {
-      width: min(100%, 900px);
+    .page {
+      width: 1240px;
       margin: 0 auto;
       background: #ffffff;
-      padding: 34px 56px 42px;
-      line-height: 1.3;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      min-height: 100vh;
+      padding: 28px 68px 56px;
+      box-sizing: border-box;
     }
 
     .header {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 34px;
     }
 
     .header h1 {
-      margin: 0 0 4px;
-      font-size: 30px;
-      font-weight: normal;
+      margin: 0 0 6px;
+      font-size: 34px;
+      font-weight: 700;
     }
 
     .subtitle {
-      margin: 0 0 6px;
-      font-size: 14px;
+      margin: 0 0 4px;
+      font-size: 17px;
+      font-weight: 700;
     }
 
     .contact {
-      font-size: 13px;
+      margin: 0;
+      line-height: 1.2;
     }
 
     .contact a {
-      color: #1c54b2;
+      color: #2f5fb8;
       text-decoration: underline;
-      margin: 0 5px;
+      font-size: 16px;
+      display: block;
     }
 
-    .education-grid,
-    .volunteer-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+    .education {
+      margin-top: 12px;
+      margin-bottom: 42px;
+    }
+
+    .education-top {
       text-align: center;
-      font-size: 13px;
+      margin-bottom: 8px;
     }
 
-    .education-item h2,
-    .volunteer-item h2 {
-      margin: 0 0 2px;
-      font-size: 14px;
-      font-weight: normal;
+    .education-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 120px;
+      align-items: start;
+      margin-top: -6px;
+    }
+
+    .edu-block {
+      text-align: center;
+      line-height: 1.25;
+      font-size: 16px;
+    }
+
+    .edu-block strong,
+    .edu-block a {
+      font-size: 16px;
+      font-weight: 700;
+      color: #2f5fb8;
+      text-decoration: underline;
+    }
+
+    .edu-block.plain strong {
+      color: #111;
+      text-decoration: none;
+    }
+
+    .edu-date {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 2px 0;
+    }
+
+    .edu-line {
+      margin: 2px 0;
+      font-size: 16px;
+      font-weight: 400;
     }
 
     .section-title {
       text-align: center;
+      font-size: 21px;
+      font-weight: 400;
+      margin: 42px 0 28px;
+    }
+
+    .text-block {
+      margin-bottom: 28px;
       font-size: 16px;
-      font-weight: normal;
-      margin: 24px 0 12px;
+      line-height: 1.28;
     }
 
-    .date {
-      font-size: 12px;
-      margin: 2px 0 4px;
+    .text-block:last-child {
+      margin-bottom: 0;
     }
 
-    .role {
+    .text-block p {
+      margin: 0 0 2px;
+    }
+
+    .text-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .job {
+      margin-bottom: 30px;
+      font-size: 16px;
+      line-height: 1.28;
+    }
+
+    .job:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-company {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .job-date {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .job-title {
+      margin: 0 0 4px;
+      font-size: 16px;
       font-style: italic;
-      margin: 2px 0 4px;
+      font-weight: 700;
     }
 
-    .education-item ul {
-      list-style: none;
-      padding: 0;
-      margin: 4px 0 0;
+    .job-desc {
+      margin: 0;
     }
 
-    .entry {
-      margin-bottom: 14px;
-      font-size: 13px;
+    .job-desc p {
+      margin: 0 0 2px;
     }
 
-    .entry-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
-      flex-wrap: wrap;
+    .job-desc p:last-child {
+      margin-bottom: 0;
     }
 
-    .entry-header strong {
-      font-size: 14px;
-      font-weight: normal;
+    .volunteer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 180px;
+      margin-top: 8px;
+      margin-bottom: 28px;
+    }
+
+    .volunteer-item {
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .volunteer-item .org {
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .volunteer-item .role {
+      font-style: italic;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .volunteer-item .date {
+      margin: 2px 0 0;
     }
 
     .skills {
-      font-size: 13px;
+      margin-top: 16px;
+      font-size: 16px;
+      line-height: 1.32;
     }
 
     .skills p {
-      margin: 4px 0;
+      margin: 0 0 2px;
     }
 
-    @media (max-width: 700px) {
-      body {
-        padding: 0;
-        background: #ffffff;
+    .skills p:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills strong {
+      font-weight: 700;
+    }
+
+    a.inline-link {
+      color: #2f5fb8;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 1280px) {
+      .page {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        padding: 24px 22px 40px;
       }
 
-      .resume {
-        padding: 24px 18px 28px;
-        box-shadow: none;
-      }
-
-      .education-grid,
+      .education-bottom,
       .volunteer-grid {
         grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 24px;
       }
 
-      .entry-header {
-        flex-direction: column;
-        align-items: flex-start;
+      .section-title {
+        margin: 30px 0 20px;
       }
     }
   </style>
 </head>
-
 <body>
-  <main class="resume">
-
+  <div class="page">
     <header class="header">
       <h1>Summerlyn Jones</h1>
-      <p class="subtitle">Cloud Support Technician | Azure & Enterprise Systems Support</p>
+      <p class="subtitle">Cloud Support Technician | Azure Focused Support</p>
       <p class="contact">
-        <a href="mailto:summerlynjones@outlook.com">Summerlynjones@outlook.com</a> |
+        <a href="mailto:Summerlynjones@outlook.com">Summerlynjones@outlook.com</a>
         <a href="https://www.linkedin.com/in/summerlynjones/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </p>
     </header>
 
-    <section>
-        <div class="education-item">
-          <h2>EdX • Edinburg</h2>
-          <p class="date">March 2023 to June 2023</p>
-          <ul>
-            <li>Digital Marketing Fundamentals</li>
-            <li>Verified Certificate for Marketing Strategies</li>
-          </ul>
+    <section class="education">
+      <div class="education-top">
+        <div class="edu-block plain">
+          <strong>EdX - CS50</strong>
+          <div class="edu-date">September 2023 - present</div>
+          <div class="edu-line">• CS50 Introduction to Python</div>
+          <div class="edu-line">• CS50 Introduction to Computer Science</div>
+          <div class="edu-line">• CS50 Artificial Intelligence with Python</div>
+          <div class="edu-line">• CS50 Understanding Technology</div>
+        </div>
+      </div>
+
+      <div class="education-bottom">
+        <div class="edu-block plain">
+          <strong>EdX - EdinburghX</strong>
+          <div class="edu-date">March 2023 to June 2023</div>
+          <div class="edu-line">• Digital Marketing Fundamentals</div>
+          <div class="edu-line"><u>Verified Certificate for Marketing Strategies</u></div>
         </div>
 
-              <div class="education-grid">
-        <div class="education-item">
-          <h2>EdX • CS50</h2>
-          <p class="date">September 2023 - present</p>
-          <ul>
-            <li>CS50 Introduction to Python</li>
-            <li>CS50 Introduction to Computer Science</li>
-            <li>CS50 Artificial Intelligence with Python</li>
-            <li>CS50 Understanding Technology</li>
-          </ul>
-        </div>
-
-        <div class="education-item">
-          <h2>Douglas J. Aveda</h2>
-          <p class="date">June 2017 - February 2018</p>
-          <ul>
-            <li>Esthiology, Education in Skincare</li>
-            <li>License Certified by the Board of Cosmetology</li>
-          </ul>
+        <div class="edu-block">
+          <a href="#">Douglas J. Aveda</a>
+          <div class="edu-date">June 2017- February 2018</div>
+          <div class="edu-line">Esthiology; Education in Skincare</div>
+          <div class="edu-line">License Certified by the Board of Cosmetology</div>
         </div>
       </div>
     </section>
 
-    <section>
-      <h3 class="section-title">Personal Projects</h3>
+    <h2 class="section-title">Personal Projects</h2>
 
-      <div class="entry">
-        <div class="entry-header">
-          <strong>Server Engineering Assistant - University of Tennessee Medical Center | January 2026 - Present</span>
-        </div>
-        <p>Assisted in the replacement of legacy server infrastructure and hardware refresh initiatives.</p>
-        <p>Configured and managed server sessions to diagnose, troubleshoot, and resolve system-level issues.</p>
-      </div>
+    <section class="text-block">
+      <p><strong>Server Engineering Assistant (Mentored Project)</strong> — <strong>University of Tennessee Medical Center</strong> | January 2026 – Present:</p>
+      <p>Replacing legacy server racks and assisting with hardware refresh initiatives</p>
+      <p>Launched and managed server sessions to troubleshoot and resolve system issues</p>
+    </section>
 
-      <div class="entry">
-        <strong>Ubuntu Linux on Raspberry Pi</strong>
-        <p>Configured and maintained a Linux-based environment for hands-on system administration and troubleshooting practice.</p>
-      </div>
+    <section class="text-block">
+      <p><strong>Ubuntu Linux on Raspberry Pi</strong></p>
+      <p>Exploring system configuration and hands-on learning with a Raspberry Pi environment</p>
+    </section>
 
-      <div class="entry">
-        <strong>Scratch Project</strong>
-        <p><a href="https://scratch.mit.edu/projects/932341999">https://scratch.mit.edu/projects/932341990</a></p>
+    <section class="text-block">
+      <p><strong>Scratch Project (just for fun)</strong></p>
+      <p><a class="inline-link" href="https://scratch.mit.edu/projects/932341999" target="_blank" rel="noopener noreferrer">https://scratch.mit.edu/projects/932341999</a></p>
+    </section>
+
+    <h2 class="section-title">Experience</h2>
+
+    <section class="job">
+      <p class="job-company">University of Tennessee Medical Center, Knoxville TN</p>
+      <p class="job-date">June 2024 - Present</p>
+      <p class="job-title">Information Technology Desktop Support Technician</p>
+      <div class="job-desc">
+        <p>Support Microsoft based environments including Azure devices and enterprise applications.</p>
+        <p>Troubleshoot hardware, software and network related issues across desktops, laptops and specialized medical systems.</p>
+        <p>Resolved weekly technical requests in a high demand environment, supporting enterprise systems and devices in congruence with Azure based infrastructure.</p>
+        <p>Communicate technical issues and solutions to non technical users, ensuring efficient issue resolution and high user satisfaction.</p>
       </div>
     </section>
 
-    <section>
-      <h3 class="section-title">Experience</h3>
-
-      <div class="entry">
-        <div class="entry-header">
-          <strong>University of Tennessee Medical Center, Knoxville TN</strong>
-        </div>
-        <p class="date">June 2024 - Present</p>
-        <p class="role">Information Technology Desktop Support Technician</p>
-        <p>Support Microsoft-based environments including Azure-integrated devices and enterprise applications.</p>
-        <p>Troubleshoot hardware, software, and network-related issues across desktops, laptops, and clinical systems.</p>
-        <p>Resolve high-volume technical requests in a fast-paced environment while maintaining system reliability.</p>
-        <p>Collaborate across teams to diagnose complex issues and implement effective solutions.</p>
-        <p>Communicate technical concepts clearly to non-technical users, improving issue resolution and user satisfaction.</p>
-      </div>
-      </div>
-      
-      <div class="entry">
-        <div class="entry-header">
-          <strong>Second Ground, Brooklyn NY</strong>
-        </div>
-        <p class="date">April 2023 - August 2023</p>
-        <p class="role">Marketing Internship & Social Media Manager</p>
-        <p>Utilized Adobe Creative Suite, Shopify, Canva, and Meta tools to support digital marketing initiatives.</p>
-        <p>Managed social platforms and contributed to brand growth during early-stage operations.</p>
-        <p>Analyzed performance data to optimize engagement and campaign effectiveness.</p>
-      </div>
-      </div>
-      
-      <div class="entry">
-        <div class="entry-header">
-          <strong>Personal Outsource Solutions, Knoxville TN</strong>
-        </div>
-        <p class="date">May 2023 - June 2024</p>
-        <p class="role">Technical Administrative Assistant</p>
-        <p>Leveraged advanced Excel functions to support accounting processes and maintain accurate records.</p>
-        <p>Assisted HR with onboarding workflows, job postings, and technical setup for new hires.</p>
-        <p>Managed Office 365 tools and supported internal communication and procurement processes.</p>
+    <section class="job">
+      <p class="job-company">Second Ground, Brooklyn NY</p>
+      <p class="job-date">April 2023 - August 2023</p>
+      <p class="job-title">Marketing Internship &amp; Social Media Manager</p>
+      <div class="job-desc">
+        <p>Gained new and valuable experience with programs like Adobe Photoshop, Adobe Creative Suite, Shopify, Canva, and META.</p>
+        <p>Managed the difficulties of Facebook and Instagram Meta Systems and start-up transitions.</p>
+        <p>Utilized dashboard visualizations to enable strategic marketing decisions and targeted campaigns for enhanced brand engagement and ROI.</p>
+        <p>Leveraged my passion for skincare alongside innovative technology to drive strategies and digital transformation to help towards success.</p>
       </div>
     </section>
 
-    <section>
-      <h3 class="section-title">Volunteer Experience</h3>
-
-      <div class="volunteer-grid">
-        <div class="volunteer-item">
-          <h2>Knoxville Public Library</h2>
-          <p class="role">Visitor Services & Executive Supporting Role</p>
-          <p class="date">2014 - 2016</p>
-        </div>
-
-        <div></div>
-
-        <div class="volunteer-item">
-          <h2>Knoxville Museum of Art Foundation</h2>
-          <p class="role">Visitor Services Representative & Volunteer</p>
-          <p class="date">2019 - present</p>
-        </div>
+    <section class="job">
+      <p class="job-company">Personnel Outsource Solutions, Knoxville TN</p>
+      <p class="job-date">May 2023 - June 2024</p>
+      <p class="job-title">Technical Administrative Assistant</p>
+      <div class="job-desc">
+        <p>Leveraged advanced Excel functions for accounting processes, including building automated records for company checkbalances.</p>
+        <p>Supported the HR department by implementing online job postings, assisting with technical solutions, and managing the onboarding processes.</p>
+        <p>Microsoft Office 365 for efficient business communication and managed procurement systems to fulfill specific company needs.</p>
       </div>
     </section>
 
-    <section>
-      <h3 class="section-title">Skills & Interests</h3>
-      <div class="skills">
-        <p><strong>Computer Skills:</strong> Microsoft Azure, Intune, Windows OS, iOS, GitHub, Python, JavaScript, Ivanti, enterprise ticketing systems</p>
-        <p><strong>Core Strengths:</strong> Technical troubleshooting, system support, problem-solving, customer support, cross-functional communication</p>
-        <p><strong>Interests:</strong> International travel, culture, photography, weather, gourmet grilled cheese sandwiches, art, language & continuous learning</p>
+    <h2 class="section-title">Volunteer Experience</h2>
+
+    <section class="volunteer-grid">
+      <div class="volunteer-item">
+        <p class="org">Knoxville Public Library</p>
+        <p class="role">Visitor Services &amp; Executive Supporting Role</p>
+        <p class="date">August 2014 - 2016</p>
+      </div>
+
+      <div class="volunteer-item">
+        <p class="org">Knoxville Museum of Art Foundation</p>
+        <p class="role">Visitor Services Representative &amp; Volunteer</p>
+        <p class="date">November 2019 - present</p>
       </div>
     </section>
 
-  </main>
+    <h2 class="section-title">Skills &amp; Interests</h2>
+
+    <section class="skills">
+      <p><strong>Computer Skills:</strong> Azure, Intune, Windows, iOS, Github, Programming Languages; Python, JavaScript, Ticketing Systems; Ivanti</p>
+      <p><strong>Foundational Skills:</strong> Leadership, Patience, Self Awareness, Self Sufficiency, Curiosity, Creative Problem-Solving</p>
+      <p><strong>Interests:</strong> International Travel; Culture; Photography; 50° Weather; Gourmet Grilled Cheese Sandwiches; Art; Language and Continuous Learning</p>
+    </section>
+  </div>
 </body>
 </html>
