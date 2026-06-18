@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: true
       - name: Build And Deploy
@@ -22,7 +22,8 @@ jobs:
           action: "upload"
           app_location: "/"          # Your HTML is in the root folder
           output_location: ""         # Leaving it clean and blank
-          skip_app_build: true        # CRITICAL: Forces Azure to host raw HTML without failing
+          skip_app_build: true        # Forces Azure to host raw HTML without failing
+
 
 
 
